@@ -1,0 +1,41 @@
+{
+  "name": "feed-list",
+  "version": "0.0.0",
+  "description": "See [the example](./example.js).",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "activity-mocks": "^0.0.0-dev.1",
+    "ampersand-collection": "^1.3.9",
+    "brfs": "^1.1.1",
+    "browserify": "^4.2.0",
+    "chai": "^1.9.1",
+    "inherits": "^2.0.1",
+    "jsdom": "^0.11.1",
+    "raf": "^2.0.1",
+    "readable-stream": "^1.0.27-1",
+    "sinon": "^1.10.2",
+    "stream-more": "^0.0.2",
+    "through2": "^0.5.1",
+    "util-extend": "^1.0.1",
+    "watchify": "^0.10.2",
+    "xtend": "^3.0.0"
+  },
+  "devDependencies": {
+    "activity-mocks": "0.0.0-dev.1",
+    "brfs": "^1.1.1",
+    "browserify": "^4.2.0",
+    "chai": "^1.9.1",
+    "jsdom": "^0.11.0",
+    "sinon": "^1.10.2",
+    "watchify": "^0.10.2"
+  },
+  "scripts": {
+    "test": "mocha test -r test/dom.js",
+    "testw": "mocha test -r test/dom.js -w"
+  },
+  "author": "",
+  "license": "ISC"
+}
