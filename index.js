@@ -2,12 +2,6 @@
 
 module.exports = FeedList;
 
-var Feed = require('stream-feed');
-var activityMocks = require('activity-mocks');
-var cycle = require('stream-cycle');
-var phraser = require('activity-phraser');
-var raf = require('raf');
-var inherits = require('inherits');
 var Event = require('geval');
 
 /**
@@ -16,7 +10,6 @@ var Event = require('geval');
  */
 function FeedList(options) {
   var feedList = this;
-  var el;
   if ( ! (this instanceof FeedList)) {
     return new FeedList(options);
   }
@@ -41,7 +34,7 @@ function FeedList(options) {
 
   // fetch more on click
   this.el.addEventListener('click', function () {
-    self.fetchMore(10);
+    feedList._options.feed.fetchMore(10);
   });
 
   /**
@@ -79,10 +72,3 @@ FeedList.prototype.render = function (el) {
   if (el) el.innerHTML = this.toHTML();
   return el;
 };
-
-function createActivity(id) {
-    var mocks = activityMocks.toArray()
-    var a = mocks[Math.floor(Math.random() * mocks.length)];
-    a.id = id;
-    return a;
-}
